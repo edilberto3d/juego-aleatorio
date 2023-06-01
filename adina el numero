@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juega-aleatoria</title>
+    
+<body>
+    
+    <script>
+        
+        var min=1;
+        var max=100;
+        var intentos=0;
+        var aleatorio=Math.floor(Math.random()*max-min+1)+min;
+        var nombre=prompt('bienvenidos al juego adivina el numero, cual es su nombre?');
+        var numero;
+
+        
+        while(intentos<10){
+         numero= parseInt(prompt(nombre+' ,ingresa un numero entre el '+min+' y el '+max));
+         
+         if(numero>=min && numero <=max){
+            if(numero<aleatorio){alert('el numero que ingresastes es bajo');
+         }else if(numero>aleatorio){
+            alert('el numero que ingresastes es alto');
+        }else if(numero==aleatorio){break;}
+
+         }
+         else{
+            alert('debe ingresar un numero '+min+' y '+max);
+
+         }
+         intentos++;
+        }
+        if(numero==aleatorio){
+            alert(nombre+ ' Felicidades adivinastes el numero en '+( intentos+ 1)+ ' intentos.');
+        }
+        else{
+            alert('Agotastes el numero de intentos, suerte para la proxima!!!!');
+        }
+    
+        
+    </script>
+    
+    
+</body>
+</html>
